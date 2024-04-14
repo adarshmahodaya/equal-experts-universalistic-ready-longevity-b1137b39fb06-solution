@@ -71,7 +71,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         print("Please download the dataset using 'poetry run exercise fetch-data'")
     
-       
+
     table_and_schema_creation_result = create_table_and_Schema(conn,schema_name,table_name,schema)
     print(table_and_schema_creation_result)
 

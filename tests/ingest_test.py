@@ -149,4 +149,4 @@ def test_check_corrupt_sample_input_data():
     con.close()
     assert (
         table_count_after == table_count_before
-    ), "Count should have increased by 1"
+    ), "Count should not increase"
