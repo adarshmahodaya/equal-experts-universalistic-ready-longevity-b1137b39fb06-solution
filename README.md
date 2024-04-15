@@ -268,4 +268,33 @@ Please include instructions about your strategy and important decisions you made
 ## Your Approach and answers to follow-up questions 
 
 _Please provide an explaination to your implementation approach and the additional questions **here**_
-1. To ensure the data quality, Not null constraints have been set up on the table creation so that certain columns must be present in all the data
+
+
+
+**follow-up questions Answers**
+1. I would maintain an audit table/file which records different batch runs along with details like batch_file_name, batch_count, run    timestamp, and other important detail which will help keep an eye on every run that is propagating data into prod. It will also help understand which file did not load and on what datetime so that it can be checked accordingly.
+
+    I will ensure that a parameter file be maintained that will contain all the sensitive information like db details, paths, auth 
+    
+    details etc and that these are not hard coded in production.
+    
+    Data encryption or masking can be performed for senstive fields.
+    
+    proper orchestration of the pipeline to ensure data consistency and integrity.
+
+    proper access control set up on the data storage, limiting the access to production data.
+
+
+2. Use of a distributed framework with parallel computation like pyspark along with a cloud based storage which can expand on demand.
+
+    Ensure proper partitioning(and bucketing) of data to improve storage and computation and reduce latency while accesing the data.
+
+    use of proper file formats at different stages based on the pipline structure and storage demands.
+
+
+
+
+3. Upon analysing the data, I could see that there are total of 6 fields, out of which 4 are present in every record. So my assumption here is that these are the four fileds (Id,PostId,VoteTypeId,CreationDate)that are mandatory to be present and additional fields (UserId,BountyAmount) are optional.
+
+     Not null constraints have been set up on the table creation so that certain columns that must be present in all the data. If any file has a record which is corrupt(By corrupt I mean either structure is invalid or mandatory columns are missing), in that case no data will be loaded and you must first attend the corrupted records in the file.
+
