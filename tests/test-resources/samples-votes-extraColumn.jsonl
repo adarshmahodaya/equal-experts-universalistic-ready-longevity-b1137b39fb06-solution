@@ -3,4 +3,6 @@
 {"Id":"48891","PostId":"14603","VoteTypeId":"2","CreationDate":"2021-09-04T00:00:00.000"}
 {"Id":"48892","PostId":"14603","VoteTypeId":"2","CreationDate":"2020-08-04T00:00:00.000"}
 {"Id":"48893","PostId":"14603","VoteTypeId":"2","CreationDate":"2020-08-05T00:00:00.000"}
-{"Id":"48894","PostId":"14603","VoteTypeId":"2","CreationDate":"2021-09-04T00:00:00.000"}
+{"Id":"48894","UserId":"30380","PostId":"14565","VoteTypeId":"8","BountyAmount":"50","CreationDate":"2021-08-25T00:00:00.000"}
+{"Id":"48895","UserId":"24730","PostId":"14565","VoteTypeId":"5","CreationDate":"2021-08-25T00:00:00.000"}
+{"Id":"48895","UserId":"24730","PostId":"14565","VoteTypeId":"5","CreationDate":"2021-08-25T00:00:00.000","test":"test"}

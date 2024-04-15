@@ -35,7 +35,7 @@ def write_json_to_db(conn,input_json_path,schema_name,table_name):
                          'UserId': 'VARCHAR',
                          'BountyAmount': 'VARCHAR'}});
     """
-    #set of query to handle duplicates if any
+    #set of queries to handle duplicates if any
     remove_duplicate_query = f"""
         CREATE TABLE {schema_name}.temp_table AS
         SELECT DISTINCT * FROM {schema_name}.{table_name};
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     databasefile = "warehouse.db"
     table_name = 'votes'
     schema_name = 'blog_analysis'
-    schema = 'Id VARCHAR, PostId VARCHAR, VoteTypeId VARCHAR, CreationDate DATETIME, UserId VARCHAR, BountyAmount VARCHAR'
+    schema = 'Id VARCHAR NOT NULL, PostId VARCHAR NOT NULL, VoteTypeId VARCHAR NOT NULL, CreationDate DATETIME NOT NULL, UserId VARCHAR, BountyAmount VARCHAR'
     
     try:
         
@@ -75,7 +75,9 @@ if __name__ == "__main__":
     table_and_schema_creation_result = create_table_and_Schema(conn,schema_name,table_name,schema)
     print(table_and_schema_creation_result)
 
+    
+
     table_load_result = write_json_to_db(conn,input_json_path,schema_name,table_name)
     print(table_load_result)
-    print(conn.execute(f"select count(*) from {schema_name}.{table_name}").fetchall())
-    conn.close()
+
+    
