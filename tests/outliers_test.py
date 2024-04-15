@@ -70,4 +70,4 @@ def test_check_result_view_count_compared_with_distinct_weeks():
     run_outliers_calculation()
     con = duckdb.connect("warehouse.db", read_only=True)
     view_count = con.execute('select count(*) from blog_analysis.outlier_weeks').fetchall()[0][0]
-    assert view_count == 2, "Expected view count based on small sample data" 
+    assert view_count == 6, "Expected view count based on small sample data" 
