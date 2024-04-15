@@ -268,3 +268,4 @@ Please include instructions about your strategy and important decisions you made
 ## Your Approach and answers to follow-up questions 
 
 _Please provide an explaination to your implementation approach and the additional questions **here**_
+1. To ensure the data quality, Not null constraints have been set up on the table creation so that certain columns must be present in all the data
